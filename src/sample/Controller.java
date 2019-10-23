@@ -46,10 +46,10 @@ public class Controller {
                 System.out.println("Login or password are empty");
             }
         });
+    }
 
-
-        /*
-        signInBtn.setOnAction(event -> {
+    private void loginUser(String loginText, String passText) {
+        if (loginText.equals("admin") && passText.equals("admin")) {
             Platform.setImplicitExit(false);
             signInBtn.getScene().getWindow().hide();
 
@@ -66,31 +66,12 @@ public class Controller {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.showAndWait();
+        } else {
+            Shake loginAnim = new Shake(loginField);
+            Shake passAnim = new Shake(passField);
 
-        });
-
-         */
-
-
-    }
-
-    private void loginUser(String loginText, String passText) {
-        Platform.setImplicitExit(false);
-        signInBtn.getScene().getWindow().hide();
-
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/sample/app.fxml"));
-
-        try {
-            loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
+            loginAnim.playAnim();
+            passAnim.playAnim();
         }
-
-        Parent root = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
-
     }
 }

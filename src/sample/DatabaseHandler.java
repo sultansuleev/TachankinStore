@@ -1,9 +1,7 @@
 package sample;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import javax.xml.crypto.Data;
+import java.sql.*;
 
 public class DatabaseHandler extends Configs {
     Connection dbConnection;
@@ -19,6 +17,11 @@ public class DatabaseHandler extends Configs {
         return dbConnection;
     }
 
+    public void showGoods() throws SQLException, ClassNotFoundException {
+
+
+    }
+
     public void addGood(String goodsName, String goodsModel, String goodsCount, String goodsPrice) {
         String insert = "INSERT INTO " + Const.GOODS_TABLE + "(" + Const.GOODS_NAME + ", "
                 + Const.GOODS_MODEL + ", " + Const.GOODS_COUNT + "," + Const.GOODS_PRICE + ")" + "Values(?, ?, ?, ?)";
@@ -31,6 +34,24 @@ public class DatabaseHandler extends Configs {
             prSt.setString(4, goodsPrice);
 
             prSt.executeUpdate();
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void resuplyGood(String id, String count) {
+        String sql = "UPDATE " + Const.GOODS_TABLE + " SET " + Const.GOODS_COUNT + " = " + " ? " + " WHERE " + Const.GOODS_ID + " = " + " ? ";
+
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(sql);
+
+            //Sdelal int vmesto String
+
+            prSt.setString(1, count);
+            prSt.setString(2, id);
+
+            prSt.executeUpdate();
+
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

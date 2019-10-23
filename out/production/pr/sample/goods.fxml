@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #EEE2DF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerLoad">
+   <children>
+      <TableView fx:id="tableView" stylesheets="@style.css">
+        <columns>
+          <TableColumn id="tb" fx:id="idCol" prefWidth="75.0" styleClass="tb" text="ID" />
+          <TableColumn id="tb" fx:id="nameCol" prefWidth="75.0" styleClass="tb" text="Name" />
+            <TableColumn id="tb" fx:id="modelCol" prefWidth="75.0" styleClass="tb" text="Model" />
+            <TableColumn id="tb" fx:id="priceCol" prefWidth="75.0" styleClass="tb" text="Price" />
+            <TableColumn id="tb" fx:id="countCol" prefWidth="75.0" styleClass="tb" text="Count" />
+            <TableColumn id="tb" fx:id="soldCol" prefWidth="75.0" styleClass="tb" text="Sold" />
+        </columns>
+      </TableView>
+   </children>
+</HBox>

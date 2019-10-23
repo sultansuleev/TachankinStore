@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #EEE2DF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerResuply">
+   <children>
+      <AnchorPane>
+         <children>
+            <TableView fx:id="tableViewForRes" stylesheets="@style.css">
+               <columns>
+                  <TableColumn id="tb" fx:id="idCol" prefWidth="75.0" styleClass="tb" text="ID" />
+                  <TableColumn id="tb" fx:id="nameCol" prefWidth="75.0" styleClass="tb" text="Name" />
+                  <TableColumn id="tb" fx:id="modelCol" prefWidth="75.0" styleClass="tb" text="Model" />
+                  <TableColumn id="tb" fx:id="priceCol" prefWidth="75.0" styleClass="tb" text="Price" />
+                  <TableColumn id="tb" fx:id="countCol" prefWidth="75.0" styleClass="tb" text="Count" />
+                  <TableColumn id="tb" fx:id="soldCol" prefWidth="75.0" styleClass="tb" text="Sold" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane>
+         <children>
+            <TextField fx:id="resuplyInputID" layoutX="20.0" layoutY="40.0" promptText="Enter ID" style="-fx-background-color: #f8efee#f8efee;" />
+            <TextField fx:id="resuplyInputCount" layoutX="20.0" layoutY="80.0" promptText="Enter Count" style="-fx-background-color: #f8efee#f8efee;" />
+            <JFXButton fx:id="resuplyBtn" layoutX="61.0" layoutY="181.0" onAction="#initialize" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #b68cc9#b68cc9;" text="Button" textFill="WHITE">
+               <font>
+                  <Font name="Avenir Book" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
